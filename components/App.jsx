@@ -10,6 +10,8 @@ var Link          = Router.Link;
 var data  = require('../public/data/places');
 var title = "Some places in Italy";
 
+var CoolComponent = require("./CoolComponent.cjsx")
+
 var App = React.createClass({
 
   getDefaultProps: function () {
@@ -35,6 +37,9 @@ var App = React.createClass({
           <div className="detail">
             <RouteHandler />
           </div>
+          <br/>
+          <br/>
+          <CoolComponent neat="yes!!!" />
         </div>
       </DocumentTitle>
     );

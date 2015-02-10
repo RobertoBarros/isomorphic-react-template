@@ -27,16 +27,18 @@ module.exports = {
 
   resolve: {
     // Allow to omit extensions when requiring these files
-    extensions: ['', '.js', '.jsx']
+    modulesDirectories: ['node_modules'],
+    extensions: ['', '.js', '.jsx', '.cjsx', '.coffee'],
   },
 
   module: {
     loaders: [
-      // Pass *.jsx files through jsx-loader transform
-      {
+       {
         test: /\.jsx$/,
         loaders: ['react-hot', 'jsx']
-      }
+      },
+      { test: /\.coffee$/, loader: "jsx-loader!coffee-loader" },
+      { test: /\.cjsx$/, loader: "coffee-loader!cjsx-loader"}
     ]
   },
   devtool: "#inline-source-map",

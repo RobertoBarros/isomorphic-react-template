@@ -20,7 +20,7 @@ var paths = {
     build:    'build/',
     public:   'public/',
     sass:     'style/main.scss',
-    server:   ['package.json', 'app.js', '*.jsx', 'cachebuster.js', 'components/**/*.jsx']
+    server:   ['package.json', 'app.js', '*.jsx', 'cachebuster.js', 'components/**/*.jsx', 'components/**/*.cjsx']
 };
 
 var pkg = require('./package.json');
@@ -108,7 +108,7 @@ gulp.task('copy:public', ['clean', 'sass'],  function() {
 
 
 // cache busters
-var bustSrc = 
+var bustSrc =
 gulp.task('bust', ['bust:collect', 'bust:replace']);
 
 // collect resources for cache busting

@@ -32,14 +32,20 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    // Allow to omit extensions when requiring these files
+    modulesDirectories: ['node_modules'],
+    extensions: ['', '.js', '.jsx', '.cjsx', '.coffee'],
   },
 
   module: {
-    loaders: [{
-      test: /\.jsx$/, loaders: ['jsx']
-    }]
+    loaders: [
+       {
+        test: /\.jsx$/,
+        loaders: ['react-hot', 'jsx']
+      },
+      { test: /\.coffee$/, loader: "jsx-loader!coffee-loader" },
+      { test: /\.cjsx$/, loader: "coffee-loader!cjsx-loader"}
+    ]
   },
-
   externals: {}
 };

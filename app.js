@@ -1,6 +1,7 @@
 'use strict';
 
 // enables JSX requires
+require('node-cjsx').transform();
 require('node-jsx').install({ extension: '.jsx' });
 
 var debug        = require('debug')('app');
